@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#7657e8"><meta name="description" content="Beat Buddy is a colorful, kid-friendly music studio for making beats.">
+<link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icons/icon-192.png"><link rel="apple-touch-icon" href="icons/icon-192.png"><link rel="stylesheet" href="styles.css">
+<title>Beat Buddy! Music Studio</title>
+</head>
+<body>
+<div class="app-shell">
+<header class="topbar"><div class="brand"><div class="brand-mark">🎧</div><div><div class="eyebrow">MY LITTLE MUSIC WORLD</div><h1>Beat Buddy<span>!</span></h1></div></div><div class="top-actions"><button class="round-btn" id="installBtn" hidden title="Install app">⬇️ <span>Install</span></button><button class="round-btn" id="helpBtn" title="Help">❔</button></div></header>
+<main>
+<section class="welcome card"><div><div class="eyebrow">HEY, MUSIC MAKER!</div><h2>Let's make some<br><span>awesome beats.</span></h2><p>Tap, mix, play and make your own sound!</p><div class="welcome-actions"><button class="primary" id="playBtn">▶ Play beat</button><button class="secondary" id="stopBtn">■ Stop</button></div></div><div class="mascot" aria-hidden="true">🐻<span>♪</span></div><div class="spark s1">✦</div><div class="spark s2">♫</div></section>
+<section class="card studio-card"><div class="section-head"><div><div class="eyebrow">YOUR MUSIC DESK</div><h2>Beat sequencer <span class="pill">16 steps</span></h2></div><button class="text-btn" id="clearBtn">🧹 Clear</button></div>
+<div class="toolbar"><div class="tempo-box"><span>🐢</span><label for="tempo">SPEED <b id="tempoValue">100 BPM</b></label><input id="tempo" type="range" min="60" max="180" value="100"><span>🐇</span></div><div class="toolbar-buttons"><button class="mini-btn" id="randomBtn">🎲 Surprise</button><button class="mini-btn" id="saveBtn">💾 Save</button></div></div>
+<div class="sequencer-wrap"><div class="sequencer" id="sequencer"><div class="step-head"><div class="track-heading">SOUNDS</div><div class="steps-head" id="stepsHead"></div></div><div id="tracks"></div></div></div><div class="hint">👆 Tap the squares to add or remove a sound. Swipe sideways to see every beat.</div>
+</section>
+<section class="card instruments-card"><div class="section-head"><div><div class="eyebrow">PICK YOUR BAND</div><h2>Sound instruments</h2></div><span class="tiny-note">Tap to preview</span></div><div class="instrument-grid" id="instrumentGrid"></div></section>
+<section class="card piano-card"><div class="section-head"><div><div class="eyebrow">PLAY IT YOURSELF</div><h2>Magic piano 🎹</h2></div><span class="tiny-note">Tap a key!</span></div><div class="piano-keys" id="pianoKeys"></div></section>
+<section class="card song-card"><div class="section-head"><div><div class="eyebrow">YOUR SONG COLLECTION</div><h2>My beats ⭐</h2></div><button class="text-btn" id="loadBtn">📂 Load</button></div><div class="song-controls"><input id="songName" maxlength="28" placeholder="Name your beat..." aria-label="Song name"><button class="primary small" id="saveSongBtn">Save beat</button><button class="secondary small" id="exportBtn">⬇ Export audio</button></div><div id="savedList" class="saved-list"><p class="empty">Your saved beats will show up here.</p></div><p class="tiny-note">Beats are saved on this device. Audio export records your loop as a WebM file in supported browsers.</p></section>
+</main><footer>Made for curious music makers 💜 <span id="offlineStatus">● Ready</span></footer>
+</div>
+<dialog id="helpDialog"><div class="dialog-inner"><button class="close" id="closeHelp">✕</button><div class="mascot small-mascot">🐻</div><h2>Welcome to Beat Buddy!</h2><p>1. Tap the sound buttons to choose instruments.<br>2. Tap squares in the beat grid to build a rhythm.<br>3. Press Play and change the speed.<br>4. Save your song, or record and export it.</p><p><b>Tip:</b> The piano keys play notes whenever you tap them. Have fun experimenting!</p><button class="primary" id="gotIt">Let's make music!</button></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body></html>
